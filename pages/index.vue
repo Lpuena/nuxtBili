@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type {  VideoItem } from '~/types/video'
+import type { VideoItem } from '~/types/video'
 // 获取频道列表
 const { data: channelList } = await useFetch('/api/channel', { method: 'GET' })
 // 获取视频列表
@@ -39,7 +39,7 @@ onLoad()
   <!-- 视频列表 -->
   <van-list v-model:loading="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
     <div class="video-list">
-      <AppVideo v-for="item in list" :key="item.bvid" :item="item"  />
+      <AppVideo v-for="item in list" :key="item.bvid" :item="item" />
     </div>
   </van-list>
 </template>
@@ -51,6 +51,4 @@ onLoad()
   flex-wrap: wrap;
   padding: 10px 5px;
 }
-
-
 </style>
